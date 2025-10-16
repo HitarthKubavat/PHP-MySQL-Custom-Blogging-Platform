@@ -1,0 +1,246 @@
+/* Modern Reset and Variables */
+:root {
+    --primary-color: #007bff; /* Bright blue for main actions */
+    --secondary-color: #6c757d; /* Muted gray for secondary text/borders */
+    --background-color: #f8f9fa; /* Light gray for background */
+    --surface-color: #ffffff; /* White for cards/forms */
+    --text-color: #343a40; /* Dark gray for body text */
+    --font-family: 'Inter', sans-serif; /* Modern, clean font */
+    --border-radius: 8px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* General Body Styles */
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Container */
+.container {
+    width: 90%; /* Slightly wider container */
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+    flex: 1;
+}
+
+/* Header/Navbar */
+header {
+    background: var(--surface-color);
+    color: var(--text-color);
+    padding: 1.2rem 0;
+    border-bottom: 1px solid #dee2e6; /* Subtle border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+header a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header #branding h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+header #branding a {
+    color: var(--primary-color);
+}
+
+header nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 25px;
+}
+
+header a:hover {
+    color: var(--primary-color);
+}
+
+/* Forms */
+form {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface-color);
+    padding: 3rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    max-width: 500px; /* Constrain forms */
+    margin: 40px auto; /* Center forms */
+}
+
+form h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 180px;
+}
+
+.btn {
+    padding: 12px 20px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.btn:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+}
+
+/* Blog Post Styling (index & post pages) */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.post {
+    background: var(--surface-color);
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.post h2 {
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.post h2 a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.post h2 a:hover {
+    color: var(--primary-color);
+}
+
+.post-meta {
+    color: var(--secondary-color);
+    font-size: 14px;
+    margin-bottom: 15px;
+    border-left: 3px solid var(--primary-color);
+    padding-left: 10px;
+}
+
+.post-content {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #e9ecef;
+    white-space: pre-wrap;
+    font-size: 17px;
+}
+
+/* Post Actions (Edit/Delete links) */
+.post-actions {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.post-actions a {
+    text-decoration: none;
+}
+
+.btn-edit {
+    background: #ffc107; /* Yellow for Edit */
+    color: var(--text-color);
+}
+.btn-edit:hover {
+    background: #e0a800;
+}
+
+.btn-delete {
+    background: #dc3545; /* Red for Delete */
+}
+.btn-delete:hover {
+    background: #c82333;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    background: var(--surface-color);
+    color: var(--secondary-color);
+    border-top: 1px solid #dee2e6;
+    font-size: 14px;
+}
